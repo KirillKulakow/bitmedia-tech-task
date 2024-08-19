@@ -16,5 +16,9 @@
     "bugs": {
         "url": "https://github.com/aokiji123/bitmedia-tech-task/issues"
     },
-    "homepage": "https://github.com/aokiji123/bitmedia-tech-task#readme"
+    "homepage": "https://github.com/aokiji123/bitmedia-tech-task#readme",
+    "engines": {
+        "node": "20.x",
+        "npm": "10.x"
+    }
 }
