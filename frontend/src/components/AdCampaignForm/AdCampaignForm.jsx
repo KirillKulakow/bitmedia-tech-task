@@ -25,6 +25,7 @@ function AdCampaignForm() {
             setPredictions(response.data);
             setLoading(false)
         } catch (err) {
+            setLoading(false)
             setError('Failed to get predictions. Please try again.');
             console.error(err);
         }
