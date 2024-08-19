@@ -1,15 +1,8 @@
-import AdCampaignForm from "./components/AddCampaignForm/AdCampaignForm.jsx";
+import { AdCampaignForm } from "./components";
 
 function App() {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: '100vh',
-        }}>
-            <AdCampaignForm />
-        </div>
+        <AdCampaignForm />
     )
 }
 

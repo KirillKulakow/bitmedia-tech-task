@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BannerSizeSelector, BudgetInput, CategorySelector, PredictionResults } from "../index.js";
+import './AdCampaignForm.scss';
 
 function AdCampaignForm() {
     const [bannerSize, setBannerSize] = useState('');
@@ -8,17 +9,21 @@ function AdCampaignForm() {
     const [budget, setBudget] = useState('');
     const [predictions, setPredictions] = useState(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+        setLoading(true)
         try {
-            const response = await axios.post('http://localhost:3000/api/predict', {
+            const response = await axios.post(
+                `${import.meta.env.VITE_REACT_APP_API_URL}/api/predictions`, {
                 bannerSize,
                 category,
                 budget: parseFloat(budget)
             });
             setPredictions(response.data);
+            setLoading(false)
         } catch (err) {
             setError('Failed to get predictions. Please try again.');
             console.error(err);
@@ -35,7 +40,7 @@ function AdCampaignForm() {
                 <button type="submit">Get Predictions</button>
             </form>
             {error && <p className="error">{error}</p>}
-            {predictions && <PredictionResults predictions={predictions} />}
+            {loading ? <p>Loading...</p> : <PredictionResults predictions={predictions} />}
         </div>
     );
 }

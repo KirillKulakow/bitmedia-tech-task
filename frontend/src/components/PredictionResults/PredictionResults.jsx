@@ -2,6 +2,10 @@ import React from 'react';
 import './PredictionResults.scss';
 
 function PredictionResults({ predictions }) {
+    if (!predictions) {
+        return null;
+    }
+
     return (
         <div className="prediction-results">
             <h2>Predictions:</h2>

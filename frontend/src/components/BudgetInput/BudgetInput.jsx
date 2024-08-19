@@ -8,7 +8,6 @@ function BudgetInput({ value, onChange }) {
             <div className="input-wrapper">
                 <span className="currency-symbol">$</span>
                 <input
-                    type="number"
                     id="budget"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
