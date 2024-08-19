@@ -1,0 +1,20 @@
+{
+    "name": "backend",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "generate": "node --max-old-space-size=4096 generateSampleData.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "mongodb": "^6.8.0",
+        "mongoose": "^8.5.3"
+    }
+}

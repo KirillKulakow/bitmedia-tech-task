@@ -1,0 +1,28 @@
+@import '../../index.scss';
+
+.budget-input {
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .currency-symbol {
+    position: absolute;
+    left: 10px;
+    color: $text-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 25px;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}

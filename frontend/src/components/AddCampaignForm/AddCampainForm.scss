@@ -1,0 +1,31 @@
+@import '../../index.scss';
+
+.ad-campaign-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+
+  h1 {
+    color: $secondary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
