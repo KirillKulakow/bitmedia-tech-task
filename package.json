@@ -1,16 +1,20 @@
 {
-  "name": "bitmedia-tech-task",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aokiji123/bitmedia-tech-task.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aokiji123/bitmedia-tech-task/issues"
-  },
-  "homepage": "https://github.com/aokiji123/bitmedia-tech-task#readme"
+    "name": "bitmedia-tech-task",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node backend/src/index.js",
+        "heroku-postbuild": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aokiji123/bitmedia-tech-task.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aokiji123/bitmedia-tech-task/issues"
+    },
+    "homepage": "https://github.com/aokiji123/bitmedia-tech-task#readme"
 }
