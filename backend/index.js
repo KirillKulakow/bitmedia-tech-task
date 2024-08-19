@@ -4,9 +4,12 @@ import impressionsRoute from './src/routes/impression.routes.js';
 import clicksRoute from './src/routes/click.routes.js';
 import predictionRoutes from "./src/routes/prediction.routes.js";
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
+app.use(cors());
+
 app.use(express.json());
 
 app.use('/api/impressions', impressionsRoute);
