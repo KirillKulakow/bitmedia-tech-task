@@ -4,6 +4,7 @@ import { BannerSizeSelector, BudgetInput, CategorySelector, PredictionResults } 
 import './AdCampaignForm.scss';
 
 function AdCampaignForm() {
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
     const [bannerSize, setBannerSize] = useState('');
     const [category, setCategory] = useState('');
     const [budget, setBudget] = useState('');
@@ -17,7 +18,7 @@ function AdCampaignForm() {
         setLoading(true)
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_REACT_APP_API_URL}/api/predictions`, {
+                `${apiUrl}/api/predictions`, {
                 bannerSize,
                 category,
                 budget: parseFloat(budget)
