@@ -4,7 +4,8 @@ import { BannerSizeSelector, BudgetInput, CategorySelector, PredictionResults } 
 import './AdCampaignForm.scss';
 
 function AdCampaignForm() {
-    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    // const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    const apiUrl = 'https://bitmedia-tech-task.vercel.app';
     const [bannerSize, setBannerSize] = useState('');
     const [category, setCategory] = useState('');
     const [budget, setBudget] = useState('');
