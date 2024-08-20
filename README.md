@@ -1,10 +1,10 @@
 ## Frontend Initialization
-- <code>npm install</code>
-- <code>npm run dev</code>
+- `cp .env.example .env` - use your backend url
+- `npm install`
+- `npm run dev`
 
 ## Backend Initialization
-- create a `.env` file in the root directory of the project
-- add the following environment variables to the `.env` file: `MONGO_URI` and `PORT`
-  - `npm run generate` to generate sample data
+- `cp .env.example .env` - use your MongoDB uri
+  - `npm run generate` to generate database collections
   - `npm run drop` to drop database collections
-- <code>npm run start</code>
+- `npm run start`

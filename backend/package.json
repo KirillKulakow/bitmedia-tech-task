@@ -6,8 +6,8 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "generate": "node generateSampleData.js",
-        "drop": "node deleteSampleData.js"
+        "generate": "node generateDatabaseCollections.js",
+        "drop": "node deleteDatabaseCollections.js"
     },
     "keywords": [],
     "author": "",
