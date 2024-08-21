@@ -10,23 +10,26 @@ function AdCampaignForm() {
     const [budget, setBudget] = useState('');
     const [predictions, setPredictions] = useState(null);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    const isValid = bannerSize && category && budget;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
         setLoading(true)
+
         try {
             const response = await axios.post(
                 `${apiUrl}/api/predictions`, {
-                bannerSize,
-                category,
-                budget: parseFloat(budget)
-            });
+                    bannerSize,
+                    category,
+                    budget: parseFloat(budget)
+                });
             setPredictions(response.data);
-            setLoading(false)
+            setLoading(false);
         } catch (err) {
-            setLoading(false)
+            setLoading(false);
             setError('Failed to get predictions. Please try again.');
             console.error(err);
         }
@@ -39,7 +42,7 @@ function AdCampaignForm() {
                 <BannerSizeSelector value={bannerSize} onChange={setBannerSize} />
                 <CategorySelector value={category} onChange={setCategory} />
                 <BudgetInput value={budget} onChange={setBudget} />
-                <button type="submit">Get Predictions</button>
+                <button type="submit" disabled={!isValid}>Get Predictions</button>
             </form>
             {error && <p className="error">{error}</p>}
             {loading ? <p>Loading...</p> : <PredictionResults predictions={predictions} />}
